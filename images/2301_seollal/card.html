@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>2023년 설날 메시지 카드가 도착했습니다.</title>
+  <meta name="title" content="2023년 설날 메시지 카드가 도착했습니다.">
+  <meta name="description" content="지금 바로 확인해보세요.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="://lottemembers.github.io/images/2301_seollal/card.html">
+  <meta property="og:title" content="2023년 설날 메시지 카드가 도착했습니다.">
+  <meta property="og:description" content="지금 바로 확인해보세요.">
+  <meta property="og:image" content="https://lottemembers.github.io/images/2301_seollal/cover.png">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="://lottemembers.github.io/images/2301_seollal/card.html">
+  <meta property="twitter:title" content="2023년 설날 메시지 카드가 도착했습니다.">
+  <meta property="twitter:description" content="지금 바로 확인해보세요.">
+  <meta property="twitter:image" content="https://lottemembers.github.io/images/2301_seollal/cover.png">
+  <script src="https://unpkg.com/jquery"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    html, body { margin:0; padding:0; height:100%; overflow:hidden; }
+		body.type-1 { background-color: #fc9696 }
+		body.type-2 { background-color: #fbf8ec }
+		body.type-3 { background-color: #bec9f4 }
+    .card-container { text-align: center; box-sizing: border-box; overflow: hidden; }
+    .content img { width: 100%; }
+    .button-container { position: fixed; right: 20px; bottom: -100px; z-index: 10; opacity: 0; 
+			-webkit-transition: cubic-bezier(0.49, 1.08, 0.74, 0.97) 500ms;
+			transition: cubic-bezier(0.49, 1.08, 0.74, 0.97) 500ms; filter: blur(10px);
+    }
+		.button-container.__active { bottom: calc(env(safe-area-inset-bottom) + 20px); opacity: 1; filter: none; }
+		.button-container .el { padding:0; margin:0; width: 64px; border: 0; border-radius: 0; background-color: transparent; }
+		.button-container .el > img { width: 100%; color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="card-container">
+    <div class="cards"></div>
+  </div>
+  <div class="button-container">
+    <button type="button" class="el" onclick="location.href='https://lpoint.page.link/e-card'"><img src="./icon-resend.png" width="96" alt="공유하기"></button>
+  </div>
+  <script>
+    $(function(){
+      var info = ( location.href.search('info=') == -1 ) ? location.href='https://lpoint.page.link/e-card' : location.href.split('info=');
+          info = info[1].split(',');
+      $('.cards').append('<lottie-player src="https://lottemembers.github.io/images/2301_seollal/seollal_'+info[0]+'b.json" background="transparent" speed="1" style="margin:0 auto;" autoplay></lottie-player>');
+      $('body').removeClass().addClass('type-'+info[0]);
+			setTimeout(function(){
+				$('.button-container').addClass('__active');
+			},5000)
+    });
+  </script>
+</body>
+</html>

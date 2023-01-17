@@ -1,0 +1,102 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>크리스마스 메시지 카드가 도착했습니다.</title>
+  <meta name="title" content="크리스마스 메시지 카드가 도착했습니다.">
+  <meta name="description" content="지금 바로 확인해보세요.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lottemembers.github.io/images/2212_card/card.html">
+  <meta property="og:title" content="크리스마스 메시지 카드가 도착했습니다.">
+  <meta property="og:description" content="지금 바로 확인해보세요.">
+  <meta property="og:image" content="https://lottemembers.github.io/images/2212_card/2212_cover.png">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://lottemembers.github.io/images/2212_card/card.html">
+  <meta property="twitter:title" content="크리스마스 메시지 카드가 도착했습니다.">
+  <meta property="twitter:description" content="지금 바로 확인해보세요.">
+  <meta property="twitter:image" content="https://lottemembers.github.io/images/2212_card/cover.png">
+  <script src="https://unpkg.com/jquery"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    html, body { margin:0; padding:0; height:100%; overflow:hidden; }
+    .card-container { text-align: center; box-sizing: border-box; overflow: hidden; }
+    .card-container .cards lottie-player {
+      -webkit-animation: intro-bi 1s linear forwards;
+      animation: intro-bi 1s linear forwards;
+    }
+    .card-container .cards > img { position:absolute; left:0; right:0; top:0; height:100%; }
+    .content img { width: 100%; }
+    .button-container { position: fixed; left: 0; right: 0; bottom: 0; margin-bottom:calc(env(safe-area-inset-bottom) + 20px); padding: 0 30px; text-align: center; opacity: 0; z-index: 10;
+      flex-grow:0; -webkit-flex-grow:0;
+      animation: slideIn 0.5s ease-in forwards 3s;
+      -webkit-animation: slideIn 0.5s ease-in forwards 3s;
+    }
+    .type-2 .button-container { animation-delay: 2s; }
+    .type-3 .button-container { animation-delay: 2s; }
+    .button-container > .el {display:block; width:100%; height:60px; color:#fff; font-size:18px; text-align:center; line-height:60px; border: none; border-radius: 4px; background-color: #009af9;}
+    .button-container > .bi { margin-top: 8px; }
+    @-webkit-keyframes intro-bi {
+      from {
+        -webkit-filter: blur(10px);
+      }
+      to {
+        -webkit-filter: blur(0);
+        opacity: 1;
+      }
+    }
+    @keyframes intro-bi {
+      from {
+        filter: blur(10px);
+      }
+      to {
+        filter: blur(0);
+        opacity: 1;
+      }
+    }
+    @-webkit-keyframes slideIn {
+      0% {
+        -webkit-transform:translateY(20px);
+      }
+      100% {
+        -webkit-transform:translateY(0);
+        opacity: 1;
+      }
+    }
+    @keyframes slideIn {
+      0% {
+        transform:translateY(20px);
+      }
+      100% {
+        transform:translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card-container">
+    <div class="cards"></div>
+  </div>
+  <div class="button-container">
+    <button type="button" class="el" id="recall">답장 보내기</button>
+    <div class="bi"><img src="https://lottemembers.github.io/images/2212_card/bi-brand.png" height="10" alt="L.POINT|L.PAY"></div>
+  </div>
+  <script>
+    $(function(){
+      var info = ( location.href.search('info=') == -1 ) ? location.href='https://lpoint.page.link/e-card' : location.href.split('info=');
+          info = info[1].split(',');
+      $('.cards').append('<lottie-player src="https://lottemembers.github.io/images/2212_card/0'+info[0]+'_christmas_b.json" background="transparent" speed="1" style="margin:0 auto; opacity:0;" autoplay></lottie-player>');
+      $('body').removeClass().addClass('type-'+info[0]);
+      if( info.length > 1 ) {
+        $('#recall').html(decodeURIComponent(info[1])+'님에게 답장 보내기');
+      }
+      $('#recall').on('click',function(){
+        location.href='https://lpoint.page.link/e-card';
+      });
+    });
+  </script>
+</body>
+</html>
