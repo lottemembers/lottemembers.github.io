@@ -17,11 +17,7 @@
     window.addEventListener('DOMContentLoaded',()=>{
       const param = location.href.split('?paths=')[1];
       const ua = detect.parse(navigator.userAgent);
-      if( ua.device.type.toLowerCase() == 'mobile' && ua.source.toLowerCase().indexOf('ltappweb') != -1 ){ 
-        location.href = paths[param].applink;
-      }
-      
-      if( ua.device.type.toLowerCase() == 'mobile' && ua.source.toLowerCase().indexOf('ltappweb') != 0 ){ 
+      if( ua.device.type.toLowerCase() == 'mobile' ){ 
         location.href = paths[param].mobile;
       }
       if( ua.device.type.toLowerCase() == 'desktop' ){ 
