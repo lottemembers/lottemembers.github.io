@@ -16,6 +16,7 @@
       const param = ( location.href.search('&') != -1 ) ? location.href.split('?paths=')[1].split('&')[0] : location.href.split('?paths=')[1];
       const ua = navigator.userAgent.toLowerCase();
       const deviceType = (ua.search(/(mobile)|(inapp)|(ltappweb)/g) != -1) ? 'mobile' : 'desktop';
+      alert(ua);
       alert(deviceType);
       for(const key in paths){
         if( key != param ){
